@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f0">
+  <meta name="description" content="Un pequeño mundo para Valen: palabras, colores, números y familia. Juegos con sonidos y amigos para descubrir juntos.">
+  <title>Valen & amigos · Aprendemos jugando</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/amigos.webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#juguemos">Ir a los juegos</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#inicio" aria-label="Valen y amigos, inicio"><span class="brand-bird" data-art="toucan" aria-hidden="true"></span><span><b><span data-child>Valen</span><span class="amp"> & </span>amigos</b><small>UN MUNDO POR DESCUBRIR</small></span></a>
+    <nav class="desktop-nav" aria-label="Principal"><a href="#juguemos">Juguemos</a><a href="#amigos">Nuestros amigos</a><a href="#familia">En familia</a></nav>
+    <div class="header-actions"><button class="icon-button sound-toggle" aria-label="Silenciar sonidos" aria-pressed="false" title="Sonido" data-icon="sound"></button><button class="parent-button" id="open-settings"><span data-icon="settings" aria-hidden="true"></span><span>Para grandes</span></button></div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="little-spark" aria-hidden="true">✦</span> HOLA, PEQUEÑO EXPLORADOR</div>
+        <h1 id="hero-title">Un mundo para<br><span class="discover">descubrir,<svg viewBox="0 0 370 18" aria-hidden="true"><path d="M5 12 Q170 -5 365 9"/></svg></span><br>palabra a palabra<span class="coral-dot">.</span></h1>
+        <p>Tocamos, escuchamos y jugamos.<br>Una aventura de colores, sonidos y primeras palabras para <strong data-child>Valen</strong>.</p>
+        <div class="hero-buttons"><a class="button button-coral" href="#juguemos">¡Vamos a jugar! <span data-icon="arrow" aria-hidden="true"></span></a><button class="listen-link" id="hello-button"><span class="small-play" data-icon="play" aria-hidden="true"></span>Escuchá un saludo</button></div>
+        <div class="hero-notes"><span><i class="note-dot mint"></i>Para jugar juntos</span><span><i class="note-dot yellow"></i>A tu propio ritmo</span></div>
+      </div>
+      <div class="hero-world">
+        <div class="world-blob" aria-hidden="true"></div><span class="doodle star-one" aria-hidden="true">✧</span><span class="doodle star-two" aria-hidden="true">✦</span><span class="doodle swirl" aria-hidden="true">〰</span>
+        <button class="hello-bubble" id="bubble-hello"><span data-icon="sound" aria-hidden="true"></span><span>¡Hola, <span data-child>Valen</span>!</span></button>
+        <img class="hero-art" src="assets/amigos.webp" width="1536" height="1024" alt="Un loro azul y amarillo, un tucán y un pingüino junto a un auto rojo y bloques de números" fetchpriority="high">
+        <span class="color-sticker"><i class="blue-swatch"></i><i class="yellow-swatch"></i>¡Azul y amarillo!</span>
+        <div class="world-caption"><span aria-hidden="true">♡</span> Los mejores descubrimientos empiezan jugando.</div>
+      </div>
+    </section>
+
+    <div class="skills-strip" aria-label="Qué vamos a descubrir"><div class="wrap strip-inner"><span><span data-icon="chat" aria-hidden="true"></span>Pequeñas palabras</span><i aria-hidden="true">✦</i><span><span data-icon="palette" aria-hidden="true"></span>Muchos colores</span><i aria-hidden="true">✦</i><span><span class="number-icon" aria-hidden="true">123</span>Primeros números</span><i aria-hidden="true">✦</i><span><span data-icon="heart" aria-hidden="true"></span>Personas que queremos</span></div></div>
+
+    <section class="play-section wrap reveal" id="juguemos" aria-labelledby="play-heading">
+      <div class="section-heading"><div><div class="eyebrow">UN TOQUE, UN DESCUBRIMIENTO</div><h2 id="play-heading">¿A qué jugamos hoy?</h2></div><span class="handwritten">Elegí tu aventura <span aria-hidden="true">↙</span></span></div>
+      <div class="activity-tabs" role="tablist" aria-label="Elegir actividad">
+        <button class="activity-tab is-active" role="tab" id="tab-words" aria-selected="true" aria-controls="game-panel" tabindex="0" data-mode="words"><span class="tab-art" data-art="toucan" aria-hidden="true"></span><span>Palabras<small>Escuchá y descubrí</small></span><span class="tab-arrow" data-icon="arrow" aria-hidden="true"></span></button>
+        <button class="activity-tab" role="tab" id="tab-colors" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-mode="colors"><span class="tab-art palette-art" data-art="balloons" aria-hidden="true"></span><span>Colores<small>Un arcoíris para vos</small></span><span class="tab-arrow" data-icon="arrow" aria-hidden="true"></span></button>
+        <button class="activity-tab" role="tab" id="tab-count" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-mode="count"><span class="tab-art" data-art="penguin" aria-hidden="true"></span><span>Contamos<small>Uno, dos… ¡y tres!</small></span><span class="tab-arrow" data-icon="arrow" aria-hidden="true"></span></button>
+        <button class="activity-tab" role="tab" id="tab-family" aria-selected="false" aria-controls="game-panel" tabindex="-1" data-mode="family"><span class="tab-art" data-art="family" aria-hidden="true"></span><span>Mi familia<small>Nombres con cariño</small></span><span class="tab-arrow" data-icon="arrow" aria-hidden="true"></span></button>
+      </div>
+      <div class="game-card" id="game-panel" role="tabpanel" aria-labelledby="tab-words">
+        <div class="game-topline"><span class="game-label"><i></i><span id="game-mode-label">JUGAMOS CON PALABRAS</span></span><button class="round-button" id="repeat-instruction" aria-label="Escuchar la consigna" data-icon="sound"></button></div>
+        <h3 id="game-title">Tocá un amigo. ¿Cómo se llama?</h3><p class="game-description" id="game-description">Escuchá su nombre y probá decirlo con alguien que quieras.</p>
+        <div class="game-board" id="game-board"></div>
+        <div class="game-feedback" role="status" aria-live="polite" aria-atomic="true"><span class="feedback-icon" data-icon="chat" aria-hidden="true"></span><span id="feedback-text">Cada palabra es una pequeña aventura.</span></div>
+        <div class="game-controls"><button class="button button-green" id="next-game"><span id="next-label">Buscamos un amigo</span><span data-icon="arrow" aria-hidden="true"></span></button><button class="text-button" id="repeat-word"><span data-icon="sound" aria-hidden="true"></span>Escuchar otra vez</button></div>
+      </div>
+      <p class="play-footnote"><span data-icon="heart" aria-hidden="true"></span>Una palabra, una sonrisa, un ratito juntos. Eso también es aprender.</p>
+    </section>
+
+    <section class="friends-section" id="amigos" aria-labelledby="friends-heading"><div class="wrap reveal">
+      <div class="center-heading"><div class="eyebrow">UNA PANDILLA MUY ESPECIAL</div><h2 id="friends-heading">Tus nuevos compañeros de juego</h2><p>Cada amigo tiene algo lindo para mostrarte.<br>¡Tocalos y escuchá!</p></div>
+      <div class="friend-grid">
+        <button class="friend-card friend-yellow" data-friend="macaw"><span class="friend-number">01</span><span class="friend-art" data-art="macaw" aria-hidden="true"></span><span class="friend-name">Lolo, el loro</span><span class="friend-detail">Azul, amarillo y muchas palabras.</span><span class="friend-action">¡Hola, Lolo! <span data-icon="sound" aria-hidden="true"></span></span></button>
+        <button class="friend-card friend-peach" data-friend="toucan"><span class="friend-number">02</span><span class="friend-art" data-art="toucan" aria-hidden="true"></span><span class="friend-name">Tito, el tucán</span><span class="friend-detail">Un pico grande. Una gran aventura.</span><span class="friend-action">¡Hola, Tito! <span data-icon="sound" aria-hidden="true"></span></span></button>
+        <button class="friend-card friend-blue" data-friend="penguin"><span class="friend-number">03</span><span class="friend-art" data-art="penguin" aria-hidden="true"></span><span class="friend-name">Pipo, el pingüino</span><span class="friend-detail">Pasito a pasito, contamos juntos.</span><span class="friend-action">¡Hola, Pipo! <span data-icon="sound" aria-hidden="true"></span></span></button>
+      </div>
+    </div></section>
+
+    <section class="family-section wrap reveal" id="familia" aria-labelledby="family-heading">
+      <div class="family-illustration"><div class="family-orbit" aria-hidden="true"><span class="orbit-heart heart-one">♡</span><span class="orbit-heart heart-two">♡</span><span class="orbit-star">✦</span></div><div class="family-large-art" data-art="family" aria-hidden="true"></div><span class="family-tag">Nuestro lugar favorito: juntos.</span></div>
+      <div class="family-copy"><div class="eyebrow">LAS PALABRAS MÁS CERCANAS</div><h2 id="family-heading">Mamá, papá…<br>y todo nuestro mundo<span class="coral-dot">.</span></h2><p>Hay nombres que son un abrazo. Descubrimos a las personas que queremos y jugamos a saludarlas.</p><div class="family-name-chips" id="family-name-chips"></div><button class="button button-green" id="family-start">Jugamos en familia <span data-icon="heart" aria-hidden="true"></span></button></div>
+    </section>
+
+    <section class="together-section wrap reveal"><div class="together-copy"><span class="eyebrow">EL JUEGO SIGUE FUERA DE LA PANTALLA</span><h2>Ahora… ¡te toca a vos!</h2><p>Busquen un auto de juguete, cuenten tres pasos o saluden a Nona.<br>Las mejores palabras son las que compartimos.</p><button class="text-button" id="offline-idea"><span data-icon="shuffle" aria-hidden="true"></span>Otra idea para jugar</button><p class="offline-prompt" id="offline-prompt" role="status">Busquemos algo amarillo en casa.</p></div><div class="together-art" data-art="car" aria-hidden="true"></div><span class="together-spark" aria-hidden="true">✦</span></section>
+  </main>
+
+  <footer class="site-footer wrap"><a class="brand footer-brand" href="#inicio"><span class="brand-bird" data-art="toucan" aria-hidden="true"></span><b><span data-child>Valen</span> & amigos</b></a><p>Hecho con cariño, para descubrir juntos.</p><a class="footer-back" href="#juguemos">Volver a jugar <span aria-hidden="true">↑</span></a><div class="developer-credit"><span>Sitio desarrollado por <strong>Juan Pablo Molina</strong></span><a href="https://github.com/Juanpimolina92" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Juan Pablo Molina, abre una pestaña nueva">GitHub <span aria-hidden="true">↗</span></a></div></footer>
+
+  <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title"><form id="settings-form"><div class="dialog-header"><div><div class="eyebrow">UN ESPACIO PARA LA FAMILIA</div><h2 id="settings-title">Para grandes</h2></div><button type="button" class="icon-button" id="close-settings" aria-label="Cerrar ajustes" data-icon="close"></button></div><p>Prepará un ratito de juego a su medida. Los ajustes se guardan solamente en este navegador.</p><label class="field-label" for="child-name">¿Cómo lo llamamos?</label><input id="child-name" name="childName" maxlength="24" required autocomplete="off" value="Valen"><div class="settings-row"><label for="volume">Volumen</label><input id="volume" name="volume" type="range" min="0" max="1" step="0.05" value="0.75"></div><div class="settings-row"><label for="speech-rate">Ritmo de la voz</label><select id="speech-rate" name="rate"><option value="0.85">Tranquilo</option><option value="1">Natural</option></select></div><div class="settings-row"><label for="count-limit">Contamos hasta</label><select id="count-limit" name="countLimit"><option value="3">3</option><option value="5">5</option></select></div><label class="checkbox-label"><input type="checkbox" id="reduced-motion" name="reducedMotion"> Animaciones más tranquilas</label><details class="family-settings"><summary>Nombres de la familia</summary><div id="family-fields"></div></details><div class="audio-note" id="audio-note">Los juegos incluyen audios en español. Los nombres personalizados usan la voz del navegador cuando está disponible.</div><button class="button button-coral save-settings" type="submit">Guardar y seguir jugando <span data-icon="arrow" aria-hidden="true"></span></button></form></dialog>
+  <div class="celebration" id="celebration" aria-hidden="true"></div>
+</body>
+</html>
